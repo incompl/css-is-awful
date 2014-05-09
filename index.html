@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS is Awful</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="slide.css" media="screen">
+    <script src="lib/jquery-1.9.0.min.js"></script>
+    <script src="lib/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="slide.js"></script>
+
+    <script id="touch-template" type="template">
+      <div id="touch">
+        <button id="start">start presentation</button>
+        <button id="done">done</button>
+        <button id="prev">prev</button>
+        <button id="next">next</button>
+      </div>
+    </script>
+  </head>
+  <body>
+
+    <div id="wrapper">
+
+      <div class="slide">
+        <h1>
+          <style>
+            /* I like to put slide-specific hacks in the slide,
+            which I'd never do in a webapp of course ;) */
+            #logoLeft {
+              float: left;
+            }
+            #logoRight {
+              float: right;
+            }
+            #logoLeft, #logoRight {
+              max-width: 25%;
+            }
+          </style>
+          CSS is Awful
+        </h1>
+        <h2>How to deal with the fundamental problems that haunt us every day.</h2>
+      </div>
+
+      <div class="slide">
+        <h1>I'm Greg</h1>
+        <ul>
+          <li><a href="http://bocoup.com">Bocoup</a></li>
+          <li><a href="http://learnlayout.com">Learn CSS Layout</a></li>
+          <li><a href="http://incompl.com">incompl.com</a></li>
+          <li><a href="https://twitter.com/_gsmith">@_gsmith</a></li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h1>Mistakes were made</h1>
+        <blockquote>
+           The acknowledgement of "mistakes" is framed in an abstract sense, with no direct reference to who made the mistakes... The speaker neither accepts personal responsibility nor accuses anyone else. The word "mistakes" also does not imply intent.
+        </blockquote>
+        <p>-<a href="http://en.wikipedia.org/wiki/Mistakes_were_made">Wikipedia</a>
+      </div>
+
+      <div class="slide">
+        <h1>We CAN fix them</h1>
+        <ul>
+          <li><a href="http://www.quirksmode.org/css/quirksmode.html">Doctype / Quirks mode</a></li>
+          <li><a href="http://windows.microsoft.com/en-us/internet-explorer/products/ie-9/features/compatibility-view">IE Compatibility view</a></li>
+      </div>
+
+      <div class="slide">
+        <h1>The box model is fixed</h1>
+
+        <style>
+          * {
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+          }
+        </style>
+
+        <pre>
+          * {
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+          }
+        </pre>
+
+        <a href="http://learnlayout.com/box-model.html">Problem</a> and <a href="http://learnlayout.com/box-sizing.html">Solution</a>
+      </div>
+
+      <div class="slide">
+        <h1>Clearfix is fixed</h1>
+
+        <pre>
+          * {
+            overflow: auto;
+          }
+        </pre>
+
+        <style>
+          * {
+            overflow: auto;
+          }
+          .container {
+            background: blue;
+          }
+          .thing {
+            background: red;
+            color: white;
+            float: left;
+            width: 300px;
+            height: 200px;
+            padding: .5em;
+          }
+        </style>
+
+        <div class="container">
+          <div class="thing">I'm floating and I'm expanding my container just fine without a clearfix.</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <h1>Collapsing Margins is fixed</h1>
+
+        <style>
+          .a {
+            margin: 1em;
+            background: blue;
+            color: white;
+          }
+
+          .b {
+            margin: 1em;
+            background: red;
+          }
+        </style>
+
+        <div class="a">Thing A</div>
+        <div class="a">Thing B</div>
+        <div class="b">
+          <div class="a">Thing B</div>
+        </div>
+      </div>
+
+      <div>
+        <h1>The fact that we didn't anticipate the mobile revolution is fixed</h1>
+        <p>
+          <a href="https://gist.github.com/incompl/1048678071ecfb280a5f">Meta viewport</a>
+        </p>
+      </div>
+
+      <div class="slide">
+        <h1>What about the stuff that's not fixed?</h1>
+      </div>
+
+      <div class="slide">
+        <img src="http://media0.giphy.com/media/f6kQijbjqbjeE/giphy.gif">
+      </div>
+
+      <div class="slide">
+        <h1>position values have bad names</h1>
+        <ul>
+          <li>static -> "auto"</li>
+          <li>relative -> "offset"</li>
+          <li>absolute -> "relative"</li>
+          <li>fixed -> "fixed"</li>
+        </ul>
+        <p>Will be replaced, but never changed.</p>
+      </div>
+
+      <div class="slide">
+        <h1>Inline block</h1>
+
+        <style>
+          .cry {
+            display: inline-block;
+            background: blue;
+            color: white;
+            height: 100px;
+            width: 100px;
+          }
+        </style>
+
+        <pre>
+          &lt;div class="cry">Cry&lt;/div>
+          &lt;div class="cry">Cry&lt;/div>
+          &lt;div class="cry">Cry&lt;/div>
+        </pre>
+
+        <div>
+          <div class="cry">Cry</div>
+          <div class="cry">Cry</div>
+          <div class="cry">Cry</div>
+        </div>
+
+        <pre>&lt;div class="cry">Cry&lt;/div>&lt;div class="cry">Cry&lt;/div>&lt;div class="cry">Cry&lt;/div></pre>
+
+        <div>
+          <div class="cry">Cry</div><div class="cry">Cry</div><div class="cry">Cry</div>
+        </div>
+      </div>
+
+  </body>
+</html>
