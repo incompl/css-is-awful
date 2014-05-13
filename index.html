@@ -24,20 +24,7 @@
     <div id="wrapper">
 
       <div class="slide">
-        <h1>
-          <style>
-            /* I like to put slide-specific hacks in the slide,
-            which I'd never do in a webapp of course ;) */
-            #logoLeft {
-              float: left;
-            }
-            #logoRight {
-              float: right;
-            }
-            #logoLeft, #logoRight {
-              max-width: 25%;
-            }
-          </style>
+        <h1 class="title">
           CSS is Awful
         </h1>
         <p>How to deal with the fundamental problems that haunt us every day.</p>
@@ -102,7 +89,7 @@
         </style>
         <pre>
           .box {
-            width: 250px
+            width: 250px;
             border: solid red 50px;
             padding: 50px;
           }
@@ -255,7 +242,6 @@
           <div class="thing">I'm fixed!</div>
         </div>
 
-        <p>IE8+</p>
       </div>
 
       <div class="slide">
@@ -271,7 +257,6 @@
           <div class="thing">Everything is fixed!</div>
         </div>
 
-        <p>IE8+</p>
       </div>
 
       <div class="slide">
@@ -285,17 +270,15 @@
       </div>
 
       <div class="slide">
-        <h1>This part is OK</h1>
+        <h1>For text it's OK</h1>
 
         <style>
           .c {
-            height: 50px;
             margin: 50px;
             background: blue;
             color: white;
           }
           .ruler-50 {
-            height: 50px;
             max-width: 100px;
             line-height: 50px;
             padding-left: .5em;
@@ -322,7 +305,7 @@
       </div>
 
       <div class="slide">
-        <h1>This part is Awful</h1>
+        <h1>For layout it's Awful</h1>
 
         <style>
           .thing-a {
@@ -379,37 +362,46 @@
       </div>
 
       <div class="slide">
-        <h1>Static Design</h1>
+        <h1>Awful Thing #4</h1>
+        <h2 class="awful">Scaling by Default</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Backward compatibility on mobile</h1>
         <img style="width: 50%;" src="images/nytimes.png">
       </div>
 
       <div class="slide">
-        <h1>Static Design</h1>
+        <h1>We knew better</h1>
         <table>
-          <tr><td class="year">1999</td><td>Adaptive Design</td><td><a href="http://www.westciv.com/style_master/house/good_oil/not_paper/">link</a></td></tr>
-          <tr><td class="year">2010</td><td>Responsive Design</td><td><a href="http://alistapart.com/article/responsive-web-design">link</a></td></tr>
+          <tr><td class="year">1999</td><td>Adaptive Design</td><td>(<a href="http://www.westciv.com/style_master/house/good_oil/not_paper/">link</a>)</td></tr>
+          <tr><td class="year">2010</td><td>Responsive Design</td><td>(<a href="http://alistapart.com/article/responsive-web-design">link</a>)</td></tr>
         </table>
       </div>
 
       <div class="slide">
-        <h1>Static Design</h1>
-        <p>Phones scale by default</p>
-        <p><a href="https://gist.github.com/incompl/1048678071ecfb280a5f">You have to opt out</a></p>
+        <h1>Turn off scaling</h1>
+        <p>But allow users to zoom</p>
         <code>&lt;meta name="viewport" content="width=device-width"></code>
       </div>
 
       <div class="slide">
-        <h1>Static Design</h1>
+        <h1>Design for any viewport size</h1>
         <img style="width: 50%" src="images/openvis.png">
       </div>
 
       <div class="slide">
-        <h1>Static Design</h1>
+        <h1>Scaling by Default</h1>
         <h2 class="fixed">FIXED FOREVER</h2>
       </div>
 
       <div class="slide">
-        <h1>position value names</h1>
+        <h1>Awful Thing #5</h1>
+        <h2 class="awful">Position value names</h2>
+      </div>
+
+      <div class="slide">
+        <h1>I'm crying</h1>
         <table>
           <thead>
             <tr>
@@ -454,8 +446,8 @@
       </div>
 
       <div class="slide">
-        <h1>Unreasonable Workaround</h1>
-        <p>Convince your team to use this <a href="http://learnboost.github.io/stylus/">Stylus</a> function</p>
+        <h1>Unreasonable But Cool Workaround</h1>
+        <p><a href="http://learnboost.github.io/stylus/">Stylus</a> function (<a href="http://codepen.io/incompl/pen/isbvp/">see it in action</a>)</p>
         <pre>
 position-by(arg)
   if arg = auto
@@ -472,11 +464,15 @@ position-by(arg)
   top 100px
   right 100px
         </pre>
-        <div><a href="http://codepen.io/incompl/pen/isbvp/">View on Codepen</a></div>
       </div>
 
       <div class="slide">
-        <h1>Inline block</h1>
+        <h1>Awful Thing #6</h1>
+        <h2 class="awful">Inline block</h2>
+      </div>
+
+      <div class="slide">
+        <h1>These shouldn't be different!</h1>
 
         <style>
           .cry {
@@ -505,6 +501,146 @@ position-by(arg)
         <div>
           <div class="cry">Cry</div><div class="cry">Cry</div><div class="cry">Cry</div>
         </div>
+      </div>
+
+      <div class="slide">
+        <h1>...grumble...</h1>
+        <p><a href="http://css-tricks.com/fighting-the-space-between-inline-block-elements/">You could use hacks</a>
+      </div>
+
+      <div class="slide">
+        <h1>Actually, fuck hacks</h1>
+        <ul>
+          <li>The fix for floats is better</li>
+          <li><a href="http://bocoup.com/weblog/dive-into-flexbox/">Flexbox</a> is the future</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h1>Inline block</h1>
+        <h2 class="fixed">BROKEN FOREVER</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Awful Thing #7</h1>
+        <h2 class="awful">Vertical Centering</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Hacks have caveats</h1>
+        <ul>
+          <li>Some allow 1 row of text only</li>
+          <li>Some require fixed element height</li>
+          <li>Some use <code>inline-block</code></li>
+          <li>Some have 3d transform glitches</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h1>My favorite workaround</h1>
+        <p>Don't bother trying</p>
+      </div>
+
+      <div class="slide">
+        <h1>Flexbox is the future</h1>
+
+        <style>
+          .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            width: 500px;
+            height: 240px;
+            background-color: rgb(213, 213, 213);
+          }
+
+          .flex-item {
+            background-color: rgb(0, 143, 255);
+            width: 300px;
+            height: 100px;
+            margin: auto;
+          }
+        </style>
+
+        <div class="flex-container">
+          <div class="flex-item">I'm centered!</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <h1>Vertical Centering</h1>
+        <h2 class="fixed">FIXED FOREVER*</h2>
+        <p>*soon</p>
+      </div>
+
+      <div class="slide">
+        <h1>Lastly, the Most Awful Thing...</h1>
+      </div>
+
+      <div class="slide">
+        <h1>Awful Thing #8</h1>
+        <h2 class="awful">Memorizing Hacks</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Today I suggested these</h1>
+        <pre>
+          * {
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+          }
+          * {
+            overflow: auto;
+          }
+        </pre>
+      </div>
+
+      <div class="slide">
+        <h1>Are they hacks?</h1>
+        <ul>
+          <li>Is <code>doctype</code> a hack?</li>
+          <li>What if they became idiomized?</li>
+          <li>What if they became standards?</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h1>The Hack Cycle</h1>
+        <ul>
+          <li>Problems become hacks</li>
+          <li>Hacks become idioms</li>
+          <li>Idioms become standards</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h1>The Biggest Hack Cycle</h1>
+        <p>Turning the world's biggest information platform into the world's biggest application platform</p>
+      </div>
+
+      <div class="slide">
+        <h1>As the platform matures, hacks will become less common</h1>
+      </div>
+
+      <div class="slide">
+        <h1>Memorizing Hacks</h1>
+        <h2 class="fixed">SORT OF FIXED</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Awesome Things 1-122</h1>
+        <h2 class="awesome">background-attachment background-color background-image background-position background-repeat background border-collapse border-color border-spacing border-style border-top border-right border-bottom border-left border-top-color border-right-color border-bottom-color border-left-color border-top-style border-right-style border-bottom-style border-left-style border-top-width border-right-width border-bottom-width border-left-width border-width border bottom caption-side clear clip color content counter-increment counter-reset cursor direction display empty-cells float font-family font-size font-style font-variant font-weight font height left letter-spacing line-height list-style-image list-style-position list-style-type list-style margin-right margin-left margin-top margin-bottom margin max-height max-width min-height min-width opacity orphans outline-color outline-style outline-width outline overflow padding-top padding-right padding-bottom padding-left padding page-break-after page-break-before page-break-inside position quotes right table-layout text-align text-decoration text-indent text-transform top unicode-bidi vertical-align visibility white-space widows width word-spacing z-index @bottom-center @bottom-left @bottom-left-corner @bottom-right @bottom-right-corner @charset @counter @font-face @import @keyframes @left-bottom @left-middle @left-top @media @namespace @page @right-bottom @right-middle @right-top @string @top-center @top-left @top-left-corner @top-right @top-right-corner</h2>
+      </div>
+
+      <div class="slide">
+        <h1>CSS</h1>
+        <h2 class="fixed">COULD BE WORSE</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Thanks!</h1>
+        <p>Slides at <a href="#">static.incompl.com/awful</a></p>
+        <p>Tell me what you think <a href="https://twitter.com/_gsmith">@_gsmith</a></p>
       </div>
 
   </body>

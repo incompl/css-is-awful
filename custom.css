@@ -15,14 +15,23 @@
 
 a:link, a:visited {
   text-decoration: none;
-  color: #FF6117;
+  color: #EC2819;
 }
 a:hover {
-  background: #F14D00;
+  background: #D32B16;
   color: white;
 }
 a:active {
   color: black;
+}
+
+::selection {
+  background: black;
+  color: white;
+}
+::-moz-selection {
+  background: black;
+  color: white;
 }
 
 body {
@@ -44,6 +53,11 @@ td {
   padding: .5em;
 }
 
+li {
+  list-style-type: none;
+  margin: .3em 0;
+}
+
 pre {
   overflow: auto;
   font-family: Monaco;
@@ -59,6 +73,10 @@ blockquote {
   padding: 0 0 0 .5em;
   margin: 1em 0;
   font-style: italic;
+}
+
+.title {
+  font-size: 8rem;
 }
 
 .year {
@@ -86,6 +104,23 @@ blockquote {
   font-size: 6rem;
   margin: 2rem;
   text-align: center;
-  color: rgb(134, 47, 43);
   font-family: Museo, georgia, serif;
+
+  background-image: url('images/awful.jpg');
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgba(0,0,0,0);
+}
+
+.awesome {
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin: 2rem;
+  text-align: center;
+  font-family: Museo, georgia, serif;
+
+  background-image: url('images/awesome.jpg');
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgba(0,0,0,0);
 }
