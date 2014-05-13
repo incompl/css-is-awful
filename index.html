@@ -5,6 +5,7 @@
     <title>CSS is Awful</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="slide.css" media="screen">
+    <link rel="stylesheet" href="custom.css" media="screen">
     <script src="lib/jquery-1.9.0.min.js"></script>
     <script src="lib/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="slide.js"></script>
@@ -39,7 +40,7 @@
           </style>
           CSS is Awful
         </h1>
-        <h2>How to deal with the fundamental problems that haunt us every day.</h2>
+        <p>How to deal with the fundamental problems that haunt us every day.</p>
       </div>
 
       <div class="slide">
@@ -68,42 +69,119 @@
       </div>
 
       <div class="slide">
-        <h1>The box model is fixed</h1>
-
-        <style>
-          * {
-            -webkit-box-sizing: border-box;
-               -moz-box-sizing: border-box;
-                    box-sizing: border-box;
-          }
-        </style>
-
-        <pre>
-          * {
-            -webkit-box-sizing: border-box;
-               -moz-box-sizing: border-box;
-                    box-sizing: border-box;
-          }
-        </pre>
-
-        <a href="http://learnlayout.com/box-model.html">Problem</a> and <a href="http://learnlayout.com/box-sizing.html">Solution</a>
+        <h1>Awful Thing #1</h1>
+        <h2 class="awful">The box model</h2>
       </div>
 
       <div class="slide">
-        <h1>Clearfix is fixed</h1>
+        <h1>The Problem</h1>
+        <style>
+          .box {
+            width: 250px;
+            border: solid red 50px;
+            padding: 50px;
+            box-sizing: content-box;
+            margin: 0 auto;
+            background: yellow;
+          }
+          .box-inner {
+            width: 100%;
+            height: 50px;
+            background: blue;
+          }
+          .ruler-250 {
+            width: 250px;
+            border-top: solid blue 5px;
+            margin: 0 auto 1em;
+          }
+          .ruler-450 {
+            width: 450px;
+            border-top: solid red 5px;
+            margin: 0 auto 1em;
+          }
+        </style>
+        <pre>
+          .box {
+            width: 250px
+            border: solid red 50px;
+            padding: 50px;
+          }
+        </pre>
+        <div class="ruler-250">250px</div>
+        <div class="ruler-450">450px</div>
+        <div class="box">
+          <div class="box-inner"></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <h1>The Solution</h1>
 
         <pre>
           * {
-            overflow: auto;
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
           }
         </pre>
 
         <style>
-          * {
+          .ruler-250-after {
+            width: 250px;
+            border-top: solid black 5px;
+            margin: 0 auto 1em;
+          }
+          .box2 {
+            width: 250px;
+            border: solid red 50px;
+            padding: 50px;
+            box-sizing: content-box;
+            margin: 0 auto;
+            background: yellow;
+            box-sizing: border-box;
+          }
+          .box-inner {
+            width: 100%;
+            height: 50px;
+            background: blue;
+          }
+        </style>
+
+        <div class="ruler-250-after">250px</div>
+        <div class="box2">
+          <div class="box-inner"></div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <h1>History</h1>
+        <table>
+          <tr><td class="year">1995</td><td>IE / Quirks Mode</td><td class="good">Intuitive</td></tr>
+          <tr><td class="year">2001</td><td>W3C / Standards Mode</td><td class="bad">Unintuitive</td></tr>
+          <tr><td class="year">2010</td><td><code>box-sizing: border-box;</code></td><td class="good">Intuitive</td></tr>
+        </table>
+      </div>
+
+      <div class="slide">
+        <h1>The Box Model</h1>
+        <h2 class="fixed">FIXED FOREVER</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Awful Thing #2</h1>
+        <h2 class="awful">Clearfix</h2>
+      </div>
+
+      <div class="slide">
+        <h1>The Problem</h1>
+
+        <style>
+          .fixed-so-the-slide-works-right {
             overflow: auto;
           }
-          .container {
-            background: blue;
+          .thing-container {
+            border: solid blue 20px;
+            padding: 20px;
           }
           .thing {
             background: red;
@@ -115,58 +193,286 @@
           }
         </style>
 
-        <div class="container">
-          <div class="thing">I'm floating and I'm expanding my container just fine without a clearfix.</div>
+        <div class="fixed-so-the-slide-works-right">
+          <div class="thing-container">
+            <div class="thing">I'm floating and I'm poking out of my container!</div>
+          </div>
         </div>
       </div>
 
       <div class="slide">
-        <h1>Collapsing Margins is fixed</h1>
+        <h1>Old Clearfix</h1>
+
+        <pre>
+          .clearfix:after {
+               visibility: hidden;
+               display: block;
+               font-size: 0;
+               content: " ";
+               clear: both;
+               height: 0;
+               }
+          .clearfix { display: inline-block; }
+          * html .clearfix { height: 1%; }
+          .clearfix { display: block; }
+        </pre>
 
         <style>
-          .a {
+          .clearfix:after {
+               visibility: hidden;
+               display: block;
+               font-size: 0;
+               content: " ";
+               clear: both;
+               height: 0;
+               }
+          .clearfix { display: inline-block; }
+          * html .clearfix { height: 1%; }
+          .clearfix { display: block; }
+        </style>
+
+        <div class="thing-container clearfix">
+          <div class="thing">I'm fixed!</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <h1>New Clearfix</h1>
+
+        <pre>
+          .clearfix {
+            overflow: auto;
+          }
+        </pre>
+
+        <style>
+          .clearfix2 {
+            overflow: auto;
+          }
+        </style>
+
+        <div class="thing-container clearfix2">
+          <div class="thing">I'm fixed!</div>
+        </div>
+
+        <p>IE8+</p>
+      </div>
+
+      <div class="slide">
+        <h1>Clearfix Everything</h1>
+
+        <pre>
+          * {
+            overflow: auto;
+          }
+        </pre>
+
+        <div class="thing-container clearfix2">
+          <div class="thing">Everything is fixed!</div>
+        </div>
+
+        <p>IE8+</p>
+      </div>
+
+      <div class="slide">
+        <h1>Clearfix</h1>
+        <h2 class="fixed">FIXED FOREVER</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Awful Thing #3</h1>
+        <h2 class="awful">Collapsing Margins</h2>
+      </div>
+
+      <div class="slide">
+        <h1>This part is OK</h1>
+
+        <style>
+          .c {
+            height: 50px;
+            margin: 50px;
+            background: blue;
+            color: white;
+          }
+          .ruler-50 {
+            height: 50px;
+            max-width: 100px;
+            line-height: 50px;
+            padding-left: .5em;
+            border-left: solid black 5px;
+            margin: 0 auto 1em;
+          }
+        </style>
+
+        <pre>
+          .thing-1 {
+            margin-bottom: 50px;
+          }
+          .thing-2 {
+            margin-top: 50px;
+          }
+        </pre>
+
+        <div class="ruler-50">50px</div>
+
+        <div class="c">Thing 1</div>
+
+        <div class="c">Thing 2</div>
+
+      </div>
+
+      <div class="slide">
+        <h1>This part is Awful</h1>
+
+        <style>
+          .thing-a {
             margin: 1em;
             background: blue;
             color: white;
           }
 
-          .b {
+          .thing-b {
             margin: 1em;
             background: red;
+            color: white;
           }
         </style>
 
-        <div class="a">Thing A</div>
-        <div class="a">Thing B</div>
-        <div class="b">
-          <div class="a">Thing B</div>
+        <pre>
+          .thing-a {
+            margin: 1em;
+            background: blue;
+          }
+
+          .thing-b {
+            margin: 1em;
+            background: red;
+          }
+        </pre>
+
+        <div class="thing-a">Thing A</div>
+        <div class="thing-b">
+          Thing B
+          <div class="thing-a">Thing A</div>
         </div>
       </div>
 
-      <div>
-        <h1>The fact that we didn't anticipate the mobile revolution is fixed</h1>
-        <p>
-          <a href="https://gist.github.com/incompl/1048678071ecfb280a5f">Meta viewport</a>
-        </p>
+      <div class="slide">
+        <h1>We already fixed it!</h1>
+
+        <pre>
+          * {
+            overflow: auto;
+          }
+        </pre>
+
+        <div class="thing-a">Thing A</div>
+        <div class="thing-b clearfix2">
+          Thing B
+          <div class="thing-a">Thing A</div>
+        </div>
       </div>
 
       <div class="slide">
-        <h1>What about the stuff that's not fixed?</h1>
+        <h1>Collapsing Margins</h1>
+        <h2 class="fixed">FIXED FOREVER</h2>
       </div>
 
       <div class="slide">
-        <img src="http://media0.giphy.com/media/f6kQijbjqbjeE/giphy.gif">
+        <h1>Static Design</h1>
+        <img style="width: 50%;" src="images/nytimes.png">
       </div>
 
       <div class="slide">
-        <h1>position values have bad names</h1>
-        <ul>
-          <li>static -> "auto"</li>
-          <li>relative -> "offset"</li>
-          <li>absolute -> "relative"</li>
-          <li>fixed -> "fixed"</li>
-        </ul>
-        <p>Will be replaced, but never changed.</p>
+        <h1>Static Design</h1>
+        <table>
+          <tr><td class="year">1999</td><td>Adaptive Design</td><td><a href="http://www.westciv.com/style_master/house/good_oil/not_paper/">link</a></td></tr>
+          <tr><td class="year">2010</td><td>Responsive Design</td><td><a href="http://alistapart.com/article/responsive-web-design">link</a></td></tr>
+        </table>
+      </div>
+
+      <div class="slide">
+        <h1>Static Design</h1>
+        <p>Phones scale by default</p>
+        <p><a href="https://gist.github.com/incompl/1048678071ecfb280a5f">You have to opt out</a></p>
+        <code>&lt;meta name="viewport" content="width=device-width"></code>
+      </div>
+
+      <div class="slide">
+        <h1>Static Design</h1>
+        <img style="width: 50%" src="images/openvis.png">
+      </div>
+
+      <div class="slide">
+        <h1>Static Design</h1>
+        <h2 class="fixed">FIXED FOREVER</h2>
+      </div>
+
+      <div class="slide">
+        <h1>position value names</h1>
+        <table>
+          <thead>
+            <tr>
+              <td>name</td>
+              <td>what it means</td>
+              <td>better name</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="bad">static</td>
+              <td>based on document flow</td>
+              <td class="good">auto</td>
+            </td>
+            <tr>
+              <td class="bad">relative</td>
+              <td>offset from default position</td>
+              <td class="good">offset</td>
+            </td>
+            <tr>
+              <td class="bad">absolute</td>
+              <td>relative to nearest positioned ancestor</td>
+              <td class="good">ancestor</td>
+            </td>
+            <tr>
+              <td class="bad">fixed</td>
+              <td>relative to the viewport</td>
+              <td class="good">viewport</td>
+            </td>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="slide">
+        <h1>position value names</h1>
+        <h2 class="fixed">BROKEN FOREVER</h2>
+      </div>
+
+      <div class="slide">
+        <h1>Reasonable Workaround</h1>
+        <p>Bookmark this: <a href="http://learnlayout.com/position.html">learnlayout.com/position.html</a>
+      </div>
+
+      <div class="slide">
+        <h1>Unreasonable Workaround</h1>
+        <p>Convince your team to use this <a href="http://learnboost.github.io/stylus/">Stylus</a> function</p>
+        <pre>
+position-by(arg)
+  if arg = auto
+    position static
+  if arg = offset
+    position relative
+  if arg = ancestor
+    position absolute
+  if arg = viewport
+    position fixed
+
+#thing
+  position-by viewport
+  top 100px
+  right 100px
+        </pre>
+        <div><a href="http://codepen.io/incompl/pen/isbvp/">View on Codepen</a></div>
       </div>
 
       <div class="slide">

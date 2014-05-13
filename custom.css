@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Capture-it';
+  src: url('fonts/Capture_it.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Monaco';
+  src: url('fonts/Monaco.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Museo';
+  src: url('fonts/Museo_Slab_500.otf') format('opentype');
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #FF6117;
+}
+a:hover {
+  background: #F14D00;
+  color: white;
+}
+a:active {
+  color: black;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  color: #3C3C3C;
+}
+
+h1 {
+  font-family: Museo, georgia, serif;
+  color: black;
+}
+
+h1 {
+  clear: both;
+  margin: 0;
+}
+
+td {
+  padding: .5em;
+}
+
+pre {
+  overflow: auto;
+  font-family: Monaco;
+  font-size: .8em;
+}
+
+thead {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: solid gray 5px;
+  padding: 0 0 0 .5em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+.year {
+  color: blue;
+}
+
+.good {
+  color: green;
+}
+.bad {
+  color: red;
+}
+
+.fixed {
+  font-weight: normal;
+  font-family: Capture-it;
+  font-size: 8rem;
+  margin: 2rem;
+  text-align: center;
+  color: black;
+}
+
+.awful {
+  font-weight: normal;
+  font-size: 6rem;
+  margin: 2rem;
+  text-align: center;
+  color: rgb(134, 47, 43);
+  font-family: Museo, georgia, serif;
+}
