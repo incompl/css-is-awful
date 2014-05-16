@@ -32,6 +32,8 @@
 
       <div class="slide">
         <h1>I'm Greg</h1>
+        <img class="about" src="images/bob.png">
+        <img class="about" src="images/me.png">
         <ul>
           <li><a href="http://bocoup.com">Bocoup</a></li>
           <li><a href="http://learnlayout.com">Learn CSS Layout</a></li>
@@ -374,9 +376,11 @@
       <div class="slide">
         <h1>We knew better</h1>
         <table>
-          <tr><td class="year">1999</td><td>Adaptive Design</td><td>(<a href="http://www.westciv.com/style_master/house/good_oil/not_paper/">link</a>)</td></tr>
-          <tr><td class="year">2010</td><td>Responsive Design</td><td>(<a href="http://alistapart.com/article/responsive-web-design">link</a>)</td></tr>
+          <tr><td class="year">1999</td><td>Adaptive</td><td>(<a href="http://www.westciv.com/style_master/house/good_oil/not_paper/">link</a>)</td></tr>
+          <tr><td class="year">2010</td><td>Responsive</td><td>(<a href="http://alistapart.com/article/responsive-web-design">link</a>)</td></tr>
+          <tr><td class="year">2014</td><td>Redaptive*</td><td>(<a href="https://twitter.com/_gsmith/status/465933540572823552">link</a>)</td></tr>
         </table>
+        <p>*I made this up</p>
       </div>
 
       <div class="slide">
@@ -436,11 +440,6 @@
       </div>
 
       <div class="slide">
-        <h1>position value names</h1>
-        <h2 class="fixed">BROKEN FOREVER</h2>
-      </div>
-
-      <div class="slide">
         <h1>Reasonable Workaround</h1>
         <p>Bookmark this: <a href="http://learnlayout.com/position.html">learnlayout.com/position.html</a>
       </div>
@@ -464,6 +463,11 @@ position-by(arg)
   top 100px
   right 100px
         </pre>
+      </div>
+
+      <div class="slide">
+        <h1>position value names</h1>
+        <h2 class="fixed">BROKEN FOREVER</h2>
       </div>
 
       <div class="slide">
@@ -572,11 +576,80 @@ position-by(arg)
       </div>
 
       <div class="slide">
+        <h1>Awful Thing #8</h1>
+        <h2 class="awful">SOAKED</h2>
+      </div>
+
+      <div class="slide">
+        <h1>I made this up</h1>
+        <ul>
+          <li><span class="invert">DRY</span> = <span class="invert">D</span>on't <span class="invert">R</span>epeat <span class="invert">Y</span>ourself</li>
+          <li><span class="invert">SOAKED</span> = <span class="invert">S</span>orry <span class="invert">O</span>ur <span class="invert">A</span>berrant <span class="invert">K</span>ode <span class="invert">E</span>ntails <span class="invert">D</span>uplication</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h1>Obvious vs. hidden repitition</h1>
+        <pre>
+          body {
+            background: #E1A89D;
+          }
+          nav {
+            background: #D34025;
+          }
+          a:link {
+            color: #D34025;
+          }
+          a:hover {
+            background: #A32F1A;
+            color: white;
+          }
+        </pre>
+      </div>
+
+      <div class="slide">
+        <h1>Clear and DRY</h1>
+        <p>
+          Using <a href="http://learnboost.github.io/stylus/docs/bifs.html">Stylus built-in functions</a>
+        </p>
+        <pre>
+          red = #D34025
+          body {
+            background: lighten(red, 50%);
+          }
+          nav {
+            background: red;
+          }
+          a:link {
+            color: red;
+          }
+          a:hover {
+            background: darken(red, 30%);
+            color: white;
+          }
+        </pre>
+      </div>
+
+      <div class="slide">
+        <h1>Doesn't matter which</h1>
+        <ul>
+          <li><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
+          <li><a href="http://sass-lang.com/">Sass</a></li>
+          <li><a href="http://lesscss.org/">Less</a></li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h1>SOAKED</h1>
+        <h2 class="fixed">FIXED FOREVER</h2>
+      </div>
+
+      <div class="slide">
         <h1>Lastly, the Most Awful Thing...</h1>
       </div>
 
       <div class="slide">
-        <h1>Awful Thing #8</h1>
+        <h1>Awful Thing #9</h1>
         <h2 class="awful">Memorizing Hacks</h2>
       </div>
 

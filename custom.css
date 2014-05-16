@@ -83,6 +83,11 @@ blockquote {
   color: blue;
 }
 
+.about {
+  float: right;
+  height: 200px;
+}
+
 .good {
   color: green;
 }
@@ -123,4 +128,10 @@ blockquote {
   -webkit-background-clip: text;
   background-clip: text;
   color: rgba(0,0,0,0);
+}
+
+.invert {
+  background: #3C3C3C;
+  color: white;
+  padding: 0 3px;
 }
