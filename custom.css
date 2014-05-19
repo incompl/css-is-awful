@@ -60,8 +60,11 @@ li {
 
 pre {
   overflow: auto;
-  font-family: Monaco;
   font-size: .8em;
+}
+
+code {
+  font-family: Monaco;
 }
 
 thead {
@@ -80,7 +83,7 @@ blockquote {
 }
 
 .year {
-  color: blue;
+  color: rgb(0, 0, 226);
 }
 
 .about {
@@ -89,10 +92,10 @@ blockquote {
 }
 
 .good {
-  color: green;
+  color: rgb(0, 162, 0);
 }
 .bad {
-  color: red;
+  color: rgb(233, 0, 0);
 }
 
 .fixed {
@@ -134,4 +137,34 @@ blockquote {
   background: #3C3C3C;
   color: white;
   padding: 0 3px;
+}
+
+/* syntax highlighter theme */
+
+.css .hljs-class, .css .hljs-tag, .css .hljs-pseudo {
+  color: #EC2819;
+}
+
+.css .hljs-rules {
+  color: rgb(185, 185, 185);
+}
+
+.css .hljs-attribute {
+  color: #3C3C3C;
+}
+
+.css .hljs-value {
+  color: #3C3C3C;
+}
+
+.css .hljs-number {
+  color: rgb(70, 82, 221);
+}
+
+.markup .hljs-tag {
+  color: rgb(185, 185, 185);
+}
+
+.markup .hljs-title, .markup .hljs-attribute, .markup .hljs-value {
+  color: #EC2819;
 }

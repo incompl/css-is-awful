@@ -9,6 +9,7 @@
     <script src="lib/jquery-1.9.0.min.js"></script>
     <script src="lib/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="slide.js"></script>
+    <script src="lib/highlight.min.js"></script>
 
     <script id="touch-template" type="template">
       <div id="touch">
@@ -67,35 +68,33 @@
         <style>
           .box {
             width: 250px;
-            border: solid red 50px;
+            border: solid black 50px;
             padding: 50px;
             box-sizing: content-box;
             margin: 0 auto;
-            background: yellow;
+            background: rgb(185, 185, 185);;
           }
           .box-inner {
             width: 100%;
             height: 50px;
-            background: blue;
+            background: #EC2919;
           }
           .ruler-250 {
             width: 250px;
-            border-top: solid blue 5px;
+            border-top: solid #EC2919 5px;
             margin: 0 auto 1em;
           }
           .ruler-450 {
             width: 450px;
-            border-top: solid red 5px;
+            border-top: solid black 5px;
             margin: 0 auto 1em;
           }
         </style>
-        <pre>
-          .box {
-            width: 250px;
-            border: solid red 50px;
-            padding: 50px;
-          }
-        </pre>
+<pre><code class="css">.box {
+  width: 250px;
+  border: solid black 50px;
+  padding: 50px;
+}</code></pre>
         <div class="ruler-250">250px</div>
         <div class="ruler-450">450px</div>
         <div class="box">
@@ -106,13 +105,11 @@
       <div class="slide">
         <h1>The Solution</h1>
 
-        <pre>
-          * {
-            -webkit-box-sizing: border-box;
-               -moz-box-sizing: border-box;
-                    box-sizing: border-box;
-          }
-        </pre>
+<pre><code class="css">* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}</code></pre>
 
         <style>
           .ruler-250-after {
@@ -122,17 +119,12 @@
           }
           .box2 {
             width: 250px;
-            border: solid red 50px;
+            border: solid black 50px;
             padding: 50px;
             box-sizing: content-box;
             margin: 0 auto;
-            background: yellow;
+            background: rgb(185, 185, 185);
             box-sizing: border-box;
-          }
-          .box-inner {
-            width: 100%;
-            height: 50px;
-            background: blue;
           }
         </style>
 
@@ -169,11 +161,11 @@
             overflow: auto;
           }
           .thing-container {
-            border: solid blue 20px;
+            border: solid #3C3C3C 10px;
             padding: 20px;
           }
           .thing {
-            background: red;
+            background: #EC2819;
             color: white;
             float: left;
             width: 300px;
@@ -192,19 +184,17 @@
       <div class="slide">
         <h1>Old Clearfix</h1>
 
-        <pre>
-          .clearfix:after {
-               visibility: hidden;
-               display: block;
-               font-size: 0;
-               content: " ";
-               clear: both;
-               height: 0;
-               }
-          .clearfix { display: inline-block; }
-          * html .clearfix { height: 1%; }
-          .clearfix { display: block; }
-        </pre>
+<pre><code class="css">.clearfix:after {
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+ }
+.clearfix {display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }</code></pre>
 
         <style>
           .clearfix:after {
@@ -228,11 +218,9 @@
       <div class="slide">
         <h1>New Clearfix</h1>
 
-        <pre>
-          .clearfix {
-            overflow: auto;
-          }
-        </pre>
+<pre><code class="css">.clearfix {
+  overflow: auto;
+}</code></pre>
 
         <style>
           .clearfix2 {
@@ -249,11 +237,9 @@
       <div class="slide">
         <h1>Clearfix Everything</h1>
 
-        <pre>
-          * {
-            overflow: auto;
-          }
-        </pre>
+<pre><code class="css">* {
+  overflow: auto;
+}</code></pre>
 
         <div class="thing-container clearfix2">
           <div class="thing">Everything is fixed!</div>
@@ -277,7 +263,7 @@
         <style>
           .c {
             margin: 50px;
-            background: blue;
+            background: #EC2919;
             color: white;
           }
           .ruler-50 {
@@ -289,14 +275,12 @@
           }
         </style>
 
-        <pre>
-          .thing-1 {
-            margin-bottom: 50px;
-          }
-          .thing-2 {
-            margin-top: 50px;
-          }
-        </pre>
+<pre><code class="css">.thing-1 {
+  margin-bottom: 50px;
+}
+.thing-2 {
+  margin-top: 50px;
+}</code></pre>
 
         <div class="ruler-50">50px</div>
 
@@ -312,28 +296,24 @@
         <style>
           .thing-a {
             margin: 1em;
-            background: blue;
+            background: #EC2919;
             color: white;
           }
 
           .thing-b {
             margin: 1em;
-            background: red;
+            background: #3C3C3C;
             color: white;
           }
         </style>
 
-        <pre>
-          .thing-a {
-            margin: 1em;
-            background: blue;
-          }
+<pre><code class="css">.thing-a {
+  margin: 1em;
+}
 
-          .thing-b {
-            margin: 1em;
-            background: red;
-          }
-        </pre>
+.thing-b {
+  margin: 1em;
+}</code></pre>
 
         <div class="thing-a">Thing A</div>
         <div class="thing-b">
@@ -345,11 +325,9 @@
       <div class="slide">
         <h1>We already fixed it!</h1>
 
-        <pre>
-          * {
-            overflow: auto;
-          }
-        </pre>
+<pre><code class="css">* {
+  overflow: auto;
+}</code></pre>
 
         <div class="thing-a">Thing A</div>
         <div class="thing-b clearfix2">
@@ -365,42 +343,6 @@
 
       <div class="slide">
         <h1>Awful Thing #4</h1>
-        <h2 class="awful">Scaling by Default</h2>
-      </div>
-
-      <div class="slide">
-        <h1>Backward compatibility on mobile</h1>
-        <img style="width: 50%;" src="images/nytimes.png">
-      </div>
-
-      <div class="slide">
-        <h1>We knew better</h1>
-        <table>
-          <tr><td class="year">1999</td><td>Adaptive</td><td>(<a href="http://www.westciv.com/style_master/house/good_oil/not_paper/">link</a>)</td></tr>
-          <tr><td class="year">2010</td><td>Responsive</td><td>(<a href="http://alistapart.com/article/responsive-web-design">link</a>)</td></tr>
-          <tr><td class="year">2014</td><td>Redaptive*</td><td>(<a href="https://twitter.com/_gsmith/status/465933540572823552">link</a>)</td></tr>
-        </table>
-        <p>*I made this up</p>
-      </div>
-
-      <div class="slide">
-        <h1>Turn off scaling</h1>
-        <p>But allow users to zoom</p>
-        <code>&lt;meta name="viewport" content="width=device-width"></code>
-      </div>
-
-      <div class="slide">
-        <h1>Design for any viewport size</h1>
-        <img style="width: 50%" src="images/openvis.png">
-      </div>
-
-      <div class="slide">
-        <h1>Scaling by Default</h1>
-        <h2 class="fixed">FIXED FOREVER</h2>
-      </div>
-
-      <div class="slide">
-        <h1>Awful Thing #5</h1>
         <h2 class="awful">Position value names</h2>
       </div>
 
@@ -447,8 +389,7 @@
       <div class="slide">
         <h1>Unreasonable But Cool Workaround</h1>
         <p><a href="http://learnboost.github.io/stylus/">Stylus</a> function (<a href="http://codepen.io/incompl/pen/isbvp/">see it in action</a>)</p>
-        <pre>
-position-by(arg)
+<pre><code>position-by(arg)
   if arg = auto
     position static
   if arg = offset
@@ -461,8 +402,7 @@ position-by(arg)
 #thing
   position-by viewport
   top 100px
-  right 100px
-        </pre>
+  right 100px</code></pre>
       </div>
 
       <div class="slide">
@@ -471,7 +411,7 @@ position-by(arg)
       </div>
 
       <div class="slide">
-        <h1>Awful Thing #6</h1>
+        <h1>Awful Thing #5</h1>
         <h2 class="awful">Inline block</h2>
       </div>
 
@@ -481,18 +421,16 @@ position-by(arg)
         <style>
           .cry {
             display: inline-block;
-            background: blue;
+            background: #3C3C3C;
             color: white;
             height: 100px;
             width: 100px;
           }
         </style>
 
-        <pre>
-          &lt;div class="cry">Cry&lt;/div>
-          &lt;div class="cry">Cry&lt;/div>
-          &lt;div class="cry">Cry&lt;/div>
-        </pre>
+<pre><code class="markup">&lt;div class="cry">Cry&lt;/div>
+&lt;div class="cry">Cry&lt;/div>
+&lt;div class="cry">Cry&lt;/div></code></pre>
 
         <div>
           <div class="cry">Cry</div>
@@ -500,7 +438,7 @@ position-by(arg)
           <div class="cry">Cry</div>
         </div>
 
-        <pre>&lt;div class="cry">Cry&lt;/div>&lt;div class="cry">Cry&lt;/div>&lt;div class="cry">Cry&lt;/div></pre>
+<pre><code class="markup">&lt;div class="cry">Cry&lt;/div>&lt;div class="cry">Cry&lt;/div>&lt;div class="cry">Cry&lt;/div></code></pre>
 
         <div>
           <div class="cry">Cry</div><div class="cry">Cry</div><div class="cry">Cry</div>
@@ -526,17 +464,16 @@ position-by(arg)
       </div>
 
       <div class="slide">
-        <h1>Awful Thing #7</h1>
+        <h1>Awful Thing #6</h1>
         <h2 class="awful">Vertical Centering</h2>
       </div>
 
       <div class="slide">
-        <h1>Hacks have caveats</h1>
+        <h1>Vertical centering hacks</h1>
         <ul>
-          <li>Some allow 1 row of text only</li>
-          <li>Some require fixed element height</li>
-          <li>Some use <code>inline-block</code></li>
-          <li>Some have 3d transform glitches</li>
+          <li>Limited (situation-specific)</li>
+          <li>Brittle (situations can change)</li>
+          <li><a href="http://codepen.io/incompl/pen/BJrxy">Examples</a></li>
         </ul>
       </div>
 
@@ -552,13 +489,15 @@ position-by(arg)
           .flex-container {
             display: -webkit-flex;
             display: flex;
+            margin: 0 auto;
             width: 500px;
             height: 240px;
-            background-color: rgb(213, 213, 213);
+            border: solid #3C3C3C 10px;
           }
 
           .flex-item {
-            background-color: rgb(0, 143, 255);
+            background: #EC2819;
+            color: white;
             width: 300px;
             height: 100px;
             margin: auto;
@@ -576,7 +515,7 @@ position-by(arg)
       </div>
 
       <div class="slide">
-        <h1>Awful Thing #8</h1>
+        <h1>Awful Thing #7</h1>
         <h2 class="awful">SOAKED</h2>
       </div>
 
@@ -590,21 +529,19 @@ position-by(arg)
 
       <div class="slide">
         <h1>Obvious vs. hidden repitition</h1>
-        <pre>
-          body {
-            background: #E1A89D;
-          }
-          nav {
-            background: #D34025;
-          }
-          a:link {
-            color: #D34025;
-          }
-          a:hover {
-            background: #A32F1A;
-            color: white;
-          }
-        </pre>
+<pre><code class="css">body {
+  background: #E1A89D;
+}
+nav {
+  background: #D34025;
+}
+a:link {
+  color: #D34025;
+}
+a:hover {
+  background: #A32F1A;
+  color: white;
+}</code></pre>
       </div>
 
       <div class="slide">
@@ -612,22 +549,20 @@ position-by(arg)
         <p>
           Using <a href="http://learnboost.github.io/stylus/docs/bifs.html">Stylus built-in functions</a>
         </p>
-        <pre>
-          red = #D34025
-          body {
-            background: lighten(red, 50%);
-          }
-          nav {
-            background: red;
-          }
-          a:link {
-            color: red;
-          }
-          a:hover {
-            background: darken(red, 30%);
-            color: white;
-          }
-        </pre>
+<pre><code>red = #D34025
+body {
+  background: lighten(red, 50%);
+}
+nav {
+  background: red;
+}
+a:link {
+  color: red;
+}
+a:hover {
+  background: darken(red, 30%);
+  color: white;
+}</code></pre>
       </div>
 
       <div class="slide">
@@ -649,22 +584,20 @@ position-by(arg)
       </div>
 
       <div class="slide">
-        <h1>Awful Thing #9</h1>
+        <h1>Awful Thing #8</h1>
         <h2 class="awful">Memorizing Hacks</h2>
       </div>
 
       <div class="slide">
         <h1>Today I suggested these</h1>
-        <pre>
-          * {
-            -webkit-box-sizing: border-box;
-               -moz-box-sizing: border-box;
-                    box-sizing: border-box;
-          }
-          * {
-            overflow: auto;
-          }
-        </pre>
+<pre><code class="css">* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+* {
+  overflow: auto;
+}</code></pre>
       </div>
 
       <div class="slide">
@@ -714,6 +647,10 @@ position-by(arg)
         <p>Slides at <a href="#">static.incompl.com/awful</a></p>
         <p>Tell me what you think <a href="https://twitter.com/_gsmith">@_gsmith</a></p>
       </div>
+
+    </div>
+
+    <script>hljs.initHighlightingOnLoad();</script>
 
   </body>
 </html>
