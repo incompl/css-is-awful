@@ -113,11 +113,13 @@ blockquote {
   margin: 2rem;
   text-align: center;
   font-family: Museo, georgia, serif;
+  color: black;
 
-  background-image: url('images/awful.jpg');
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(transparent, transparent),
+              url('images/awful.jpg') repeat;
+  background: -o-linear-gradient(transparent, transparent);
   -webkit-background-clip: text;
-  background-clip: text;
-  color: rgba(0,0,0,0);
 }
 
 .awesome {

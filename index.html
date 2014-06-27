@@ -261,6 +261,9 @@
         <h1>For text it's OK</h1>
 
         <style>
+          .positioned {
+            position: relative;
+          }
           .c {
             margin: 50px;
             background: #EC2919;
@@ -272,6 +275,9 @@
             padding-left: .5em;
             border-left: solid black 5px;
             margin: 0 auto 1em;
+            position: absolute;
+            left: 50%;
+            top: 37px;
           }
         </style>
 
@@ -282,11 +288,15 @@
   margin-top: 50px;
 }</code></pre>
 
-        <div class="ruler-50">50px</div>
+        <div class="positioned">
 
-        <div class="c">Thing 1</div>
+          <div class="c">Thing 1</div>
 
-        <div class="c">Thing 2</div>
+          <div class="ruler-50">50px</div>
+
+          <div class="c">Thing 2</div>
+
+        </div>
 
       </div>
 
@@ -624,12 +634,12 @@ a:hover {
       </div>
 
       <div class="slide">
-        <h1>As the platform matures, hacks will become less common</h1>
+        <h1>Memorizing Hacks</h1>
+        <h2 class="fixed">SORT OF FIXED</h2>
       </div>
 
       <div class="slide">
-        <h1>Memorizing Hacks</h1>
-        <h2 class="fixed">SORT OF FIXED</h2>
+        <h1>It's not all bad!</h1>
       </div>
 
       <div class="slide">
